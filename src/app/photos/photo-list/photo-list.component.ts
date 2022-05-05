@@ -11,7 +11,7 @@ import { PhotoService } from '../photo/photo.service';
 export class PhotoListComponent implements OnInit {
 
   photos: Photo[] = [];
-  filter: string = '';
+  text: string = '';
 
   constructor(
     private photoService: PhotoService,
@@ -30,8 +30,5 @@ export class PhotoListComponent implements OnInit {
       .subscribe((photos) => (this.photos = photos));
   }
 
-  apllyFilter(event: Event): void {
-    const filterValue = (event.target as HTMLInputElement).value;
-  }
-
+  filter(x: any) { this.text = x.target.value}
 }
