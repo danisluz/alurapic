@@ -1,12 +1,14 @@
 <div class="text-center mt-3 mb-3">
   <form>
       <input
+          #search
           class="rounded"
           type="search"
           placeholder="search..."
           autofocus
-          (keyup)="filter($event)"
-          >
-  </form>
+          (keyup)="doSearch(search.value)"
+          ></form>
 </div>
-<ap-photos [photos]="photos | filterByDescription: text"></ap-photos>
+<ap-photos [photos]="photos | filterByDescription: filter"></ap-photos>
+
+<ap-load-button [hasMore]="hasMore"></ap-load-button>

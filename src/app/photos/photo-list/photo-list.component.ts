@@ -12,24 +12,24 @@ import { Photo } from '../photo/photo';
 export class PhotoListComponent implements OnInit, OnDestroy {
 
   photos: Photo[] = [];
-  text: string = '';
+  filter: string = '';
   debounce: Subject<string> = new Subject<string>();
+  hasMore: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.photos = this.activatedRoute.snapshot.data['photos'];
     this.debounce
-    .pipe(debounceTime(300))
-    .subscribe(text => this.text = text);
+      .pipe(debounceTime(300))
+      .subscribe(filter => this.filter = filter);
   }
 
-  filter(x: any) {
-    this.text = x.target.value;
+  doSearch(event: string) {
+    this.debounce.next(event)
   }
 
   ngOnDestroy(): void {
     this.debounce.unsubscribe();
   }
-
 }
