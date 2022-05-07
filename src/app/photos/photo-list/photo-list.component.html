@@ -1,15 +1,4 @@
-<div class="text-center mt-3 mb-3">
-  <form>
-      <i aria-hidden="true" class="fa fa-search m-2"></i>
-      <input
-          #search
-          class="rounded"
-          type="search"
-          placeholder="search..."
-          autofocus
-          (keyup)="doSearch(search.value)"
-          ></form>
-</div>
+<ap-search></ap-search>
 <ap-photos [photos]="photos | filterByDescription: filter"></ap-photos>
 
 <ap-load-button
