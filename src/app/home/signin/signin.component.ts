@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   templateUrl: './signin.component.html'
@@ -12,8 +12,8 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-        userName: ['daniel'],
-        password: ['123'],
+        userName: ['', Validators.required],
+        password: ['', Validators.required],
       });
   }
 
