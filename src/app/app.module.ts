@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ErrorsModule } from './errors/errors.module';
+import { HomeModule } from './home/home.module';
 import { PhotosModule } from './photos/photos.module';
 
 
@@ -16,6 +17,7 @@ import { PhotosModule } from './photos/photos.module';
     AppRoutingModule,
     ErrorsModule,
     PhotosModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
