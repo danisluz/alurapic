@@ -23,4 +23,5 @@ import { SearchComponent } from './search/search.component';
     CardModule
   ]
 })
+
 export class PhotoListModule {}
