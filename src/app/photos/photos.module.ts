@@ -5,7 +5,6 @@ import { DarkenOnHoverModule } from '../shared/directives/darken-on-hover/darken
 
 import { PhotoFormModule } from './photo-form/photo-form.module';
 import { PhotoListModule } from './photo-list/photo-list.module';
-import { PhotosComponent } from './photo-list/photos/photos.component';
 import { PhotoModule } from './photo/photo.module';
 
 
@@ -16,7 +15,7 @@ import { PhotoModule } from './photo/photo.module';
     PhotoFormModule,
     PhotoModule,
     PhotoListModule,
-
+    DarkenOnHoverModule
   ],
 })
 export class PhotosModule {
