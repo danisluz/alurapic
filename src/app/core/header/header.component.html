@@ -7,7 +7,7 @@
       <a (click)="logout()" class="px-2">(Logout)</a>
     </div>
     <ng-template #login>
-      <span class="navbar-text px-2"> Please, login! </span>
+      <a [routerLink]="['']" class="navbar-text px-2"> Please, login! </a>
     </ng-template>
   </nav>
 </header>
