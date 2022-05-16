@@ -26,7 +26,7 @@ export class AuthService {
         const authToken = resp.headers.get('x-access-token');
         if (authToken) {
           this.userService.setToken(authToken);
-          console.log(`User ${userName} authenticated with token ${authToken}`)
+          //console.log(`User ${userName} authenticated with token ${authToken}`)
         }
       }))
   }
