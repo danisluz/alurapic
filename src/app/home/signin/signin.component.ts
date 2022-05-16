@@ -17,7 +17,7 @@ export class SignInComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private plataformDetector: PlataformDetectorService
+    private plataformDetectorService: PlataformDetectorService
   ) {}
 
   ngOnInit(): void {
@@ -25,6 +25,8 @@ export class SignInComponent implements OnInit {
         userName: ['', Validators.required],
         password: ['', Validators.required],
       });
+      this.plataformDetectorService.isPlatformBrowser() &&
+      this.userNameInput?.nativeElement.focus();
   }
 
   login() {
@@ -39,7 +41,7 @@ export class SignInComponent implements OnInit {
             (err) => {
               console.log(err),
               this.loginForm.reset(),
-              this.plataformDetector.isPlatformBrowser() &&
+              this.plataformDetectorService.isPlatformBrowser() &&
                 this.userNameInput?.nativeElement.focus();
               alert('Invalid user name or password')
             }
