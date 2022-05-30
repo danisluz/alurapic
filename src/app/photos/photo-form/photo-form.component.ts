@@ -10,9 +10,9 @@ import { PhotoService } from '../photo/photo.service';
 })
 export class PhotoFormComponent implements OnInit {
 
-  photoForm!: FormGroup;
-  file!: File;
-  preview!: string;
+  photoForm: FormGroup;
+  file: File;
+  preview: string;
 
   constructor(
     private formBuilder: FormBuilder,

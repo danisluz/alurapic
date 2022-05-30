@@ -13,9 +13,9 @@ import { UserNotTakenValidatorService } from './user-not-taken.validator.service
 })
 export class SignUpComponent implements OnInit {
 
-  signupForm!: FormGroup;
+  signupForm: FormGroup;
   @ViewChild('emailInput')
-  emailInput!: ElementRef<HTMLInputElement>;
+  emailInput: ElementRef<HTMLInputElement>;
 
   constructor(
     private formBuilder: FormBuilder,

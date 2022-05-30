@@ -9,7 +9,7 @@ import { UserService } from '../user/user.service';
 })
 export class FooterComponent implements OnInit {
 
-  user$!: Observable<User>;
+  user$: Observable<User>;
 
   constructor(private userService: UserService){}
 

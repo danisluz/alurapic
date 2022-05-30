@@ -10,8 +10,8 @@ import { PhotoService } from '../photo/photo.service';
 })
 export class PhotoDetailsComponent implements OnInit{
 
-  photo$!: Observable<Photo>;
-  photoId!: number;
+  photo$: Observable<Photo>;
+  photoId: number;
 
   constructor(
     private route: ActivatedRoute,

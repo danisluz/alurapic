@@ -1,5 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { Photo } from './photo';
 import { PhotoComment } from './photo-comment';
 
@@ -32,15 +34,17 @@ export class PhotoService {
   }
 
   getComments(photoId: number) {
+    console.warn('chamei o getComments')
     return this.http.get<PhotoComment[]>(
-      API + '/photos/' + photoId + '/comments'
+      API + '/photos/' + photoId + '/comments',
     );
   }
 
-  addComment(photoId: number, commentText: string) {
-    return this.http.post(API + '/photos/' + photoId + '/comments', {
-      commentText,
-    });
+  addComment(photoId: number, commentText: string): Observable<PhotoComment>{
+    return this.http.post<PhotoComment>(API + '/photos/' + photoId + '/comments', {
+      commentText
+    })
+    //.subscribe(() => console.warn('eu sou o service'));
   }
 
   removePhoto(photoId: number) {

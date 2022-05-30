@@ -7,7 +7,7 @@ import { Photo } from '../../photo/photo';
 })
 export class PhotoOwnerOnlyDirective implements OnInit{
 
-  @Input() ownerPhoto!: Photo;
+  @Input() ownerPhoto: Photo;
 
   constructor(
     private element: ElementRef,
