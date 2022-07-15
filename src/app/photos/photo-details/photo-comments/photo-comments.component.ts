@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Observable, switchMap, take, tap } from 'rxjs';
 
 import { PhotoComment } from '../../photo/photo-comment';
@@ -13,12 +13,12 @@ import { map } from 'rxjs/operators';
 })
 export class PhotoCommentsComponent implements OnInit {
   @Input() photoId: number;
-  commentForm: FormGroup;
+  commentForm: UntypedFormGroup;
   comments$: Observable<PhotoComment[]>;
 
   constructor(
     private photoService: PhotoService,
-    private formBuilder: FormBuilder
+    private formBuilder: UntypedFormBuilder
   ) {}
 
   ngOnInit(): void {

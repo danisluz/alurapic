@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { PlataformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
@@ -9,12 +9,12 @@ import { PlataformDetectorService } from 'src/app/core/platform-detector/platfor
 })
 export class SignInComponent implements OnInit {
 
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
   @ViewChild('userNameInput')
   userNameInput: ElementRef<HTMLInputElement>;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private authService: AuthService,
     private router: Router,
     private plataformDetectorService: PlataformDetectorService

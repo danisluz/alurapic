@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PhotoService } from '../photo/photo.service';
 
@@ -10,12 +10,12 @@ import { PhotoService } from '../photo/photo.service';
 })
 export class PhotoFormComponent implements OnInit {
 
-  photoForm: FormGroup;
+  photoForm: UntypedFormGroup;
   file: File;
   preview: string;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private photoService: PhotoService,
     private router: Router
     ) { }
