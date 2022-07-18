@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [ LoginGuard ],
+    canActivate: [LoginGuard],
     children: [
       {
         path: '',
@@ -22,7 +22,7 @@ const routes: Routes = [
         component: SignUpComponent,
       }
     ]
-}]
+  }]
 
 @NgModule({
   imports: [
@@ -30,4 +30,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class HomeRoutingModule {}
+export class HomeRoutingModule { }

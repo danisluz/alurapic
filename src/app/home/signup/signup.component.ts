@@ -56,7 +56,6 @@ export class SignUpComponent implements OnInit {
           Validators.maxLength(14)
         ]
       ],
-
     });
     this.platformDetectorService.isPlatformBrowser() &&
     this.emailInput?.nativeElement.focus();
@@ -71,6 +70,4 @@ export class SignUpComponent implements OnInit {
         err => console.log(err)
       );
   }
-
-
 }
