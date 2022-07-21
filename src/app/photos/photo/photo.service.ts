@@ -48,7 +48,7 @@ export class PhotoService {
   }
 
   addComment(photoId: number, commentText: string): Observable<PhotoComment>{
-    return this.http.post<PhotoComment>(API + '/photos/' + photoId + '/comments', {
+    return this.http.post<PhotoComment>(API + '/photosxxx/' + photoId + '/comments', {
       commentText
     })
     //.subscribe(() => console.warn('eu sou o service'));
