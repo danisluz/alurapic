@@ -20,16 +20,34 @@ const routes: Routes = [
     //loadChildren: './home/home.module#HomeModule',
     loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule),
   },
-  { path: 'user/:userName',
-      component: PhotoListComponent,
-      resolve: { photos: PhotoListResolver },
-      data: { title: 'Timeline' },
+  { 
+    path: 'user/:userName',
+    component: PhotoListComponent,
+    resolve: { photos: PhotoListResolver },
+    data: { title: 'Timeline' },
   },
-  { path: 'p/add', component: PhotoFormComponent, canActivate: [ AuthGuard ], data: { title: 'Photo upload' },},
-  { path: 'p/:photoId', component: PhotoDetailsComponent, data: { title: 'Photo detail' },},
-  { path: 'error', component: GlobalErrorComponent, data: { title: 'Error' }, },
-  { path: 'not-found', component: NotFoundComponent, data: { title: 'Not found' }, },
-  { path: '**', redirectTo: 'not-found' },
+  { 
+    path: 'p/add', 
+    component: PhotoFormComponent, 
+    canActivate: [ AuthGuard ], 
+    data: { title: 'Photo upload' },
+  },
+  { 
+    path: 'p/:photoId', 
+    component: PhotoDetailsComponent, 
+    data: { title: 'Photo detail' },
+  },
+  { 
+    path: 'error', 
+    component: GlobalErrorComponent, 
+    data: { title: 'Error' }, 
+  },
+  { 
+    path: 'not-found', 
+    component: NotFoundComponent, 
+    data: { title: 'Not found' }, },
+  { path: '**', redirectTo: 'not-found' 
+},
 
 ];
 

@@ -24,6 +24,7 @@ export class UserService {
 
   private decodeAndNotify() {
     const token = this.tokenService.getToken();
+    // só para lembrar que os caras sao mt ruins kk, o certo era as informacoes do usuario estar tudo dentro do token, ai du decotificava com a chave e pegava os valores..
     const user = jwt_decode(token!) as User;
     this.userName = user.name;
     this.userSubject.next(user);
